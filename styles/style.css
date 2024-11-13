@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  display: flex;
+  justify-content: center;
+  height: 20vh;
+  background-color: #bae3f9;
+}
+#logo {
+  display: flex;
+}
+#imgLogo {
+  width: 20vw;
+  height: 10vh;
+  margin-top: 20px;
+}
+#user {
+  position: absolute;
+  right: 100px;
+  top: 20px;
+  width: 5vw;
+  height: auto;
+  background-color: #bae3f9;
+}
+
+#userImg {
+  width: 60px;
+  border-radius: 50%;
+}
+#userImg:hover {
+  box-shadow: 0 0 10px 10px #efd5ef;
+}
+
+/*? Menu*/
+.container-menu-burger {
+  --menu-size: 32px;
+
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  display: flex;
+  height: var(--menu-size);
+  width: var(--menu-size);
+}
+
+.menu-burger,
+.menu-burger::before,
+.menu-burger::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: calc(var(--menu-size) / 10);
+  width: var(--menu-size);
+  background-color: #000;
+}
+
+.menu-burger::before {
+  transform: translateY(calc(var(--menu-size) / -3));
+}
+.menu-burger::after {
+  transform: translateY(calc(var(--menu-size) / 3));
+}
+/**/
+
+.container-menu-burger {
+  --menu-size: 32px;
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  display: flex;
+  height: var(--menu-size);
+  width: var(--menu-size);
+  cursor: pointer;
+}
+
+.menu-burger,
+.menu-burger::before,
+.menu-burger::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: calc(var(--menu-size) / 10);
+  width: var(--menu-size);
+  background-color: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-burger::before {
+  transform: translateY(calc(var(--menu-size) / -3));
+}
+
+.menu-burger::after {
+  transform: translateY(calc(var(--menu-size) / 3));
+}
+
+/* Estilos quando o mouse está sobre o contêiner */
+.container-menu-burger:hover .menu-burger::before {
+  transform: translateY(0) rotate(45deg); /* Gira a linha superior */
+}
+
+.container-menu-burger:hover .menu-burger::after {
+  transform: translateY(0) rotate(-45deg); /* Gira a linha inferior */
+}
+
+.container-menu-burger:hover .menu-burger {
+  background-color: transparent; /* Esconde apenas a linha do meio */
+}
